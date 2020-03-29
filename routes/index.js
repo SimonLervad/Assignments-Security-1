@@ -5,6 +5,24 @@ const modCountry = require("../models/handleCountries");
 const modCities = require("../models/handleCities"); 
 const modLang = require("../models/handleLanguages"); 
 const modGover = require("../models/handleGovernmentForms");
+const userHandler = require("../models/handleUsers"); 
+
+
+// login form and registration
+router.get('/register', function(req, res) {    // display register route
+    res.render('register', {                    // display register form view
+        title: 'nodeAuthDemo Register User'     // input data to view
+    });
+});
+router.post('/register', function(req, res) {   // new user post route
+    userHandler.upsertUser(req);
+    return res.redirect('/');                   // skip the receipt, return to fp
+});
+
+
+
+
+// login end 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
