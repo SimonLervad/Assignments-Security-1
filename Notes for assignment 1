@@ -1,0 +1,3 @@
+When we are logged in, we create a object called req.session, this object holds information about what user are loggin in, if the user is logged in. and data for the cookie so we stay logged in cross the site. 
+
+If we want the user to log out, we want to clear the cookies saved in the object, and set authendicated to "false" - then there server will no longer recognise the user and the user will not have acces to the information the server holds anymore. 
